@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stock-genie-agent"
+version = "0.1.0"
+description = "Multi-agent stock analysis system powered by Claude Code CLI"
+requires-python = ">=3.9"
+dependencies = [
+    "yfinance>=0.2.40",
+    "pandas>=2.2.0",
+    "numpy>=1.24.0",
+    "feedparser>=6.0.11",
+    "requests>=2.31.0",
+    "resend>=2.0.0",
+    "python-dotenv>=1.0.1",
+    "pydantic>=2.5.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["config*", "models*", "tools*", "services*"]
+
+[project.scripts]
+stock-genie = "main:main"
